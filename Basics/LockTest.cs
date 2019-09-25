@@ -18,14 +18,18 @@ namespace Basics
             List<Thread> threads = new List<Thread>(thCount);
             for(int i = 0; i < thCount; i++)
                 threads.Add(new Thread(CallMeMaybe));
-            Parallel.ForEach(threads, thread => thread.Start());
+            //Parallel.ForEach(threads, thread => thread.Start());
+            foreach (var thread in threads)
+            {
+                thread.Start();
+            }
 
         }
 
         public static void CallMeMaybe()
         {
             for(int i = 0; i < 10; i++)
-                InternalCall();
+                InternalCallNonLock();
         }
 
         public static void InternalCall()

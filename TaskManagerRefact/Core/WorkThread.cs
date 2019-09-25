@@ -21,7 +21,7 @@ namespace TaskManagerRefact.Core
         public WorkThread()
         {
             _thread = new Thread(WorkLoop);
-            _thread.IsBackground = true;
+            _thread.IsBackground = false;
             _state = WorkThreadState.Idle;
             _thread.Start();
         }
