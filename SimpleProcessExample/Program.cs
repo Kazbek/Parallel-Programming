@@ -8,6 +8,8 @@ namespace SimpleProcessExample
     {
         static int Main(string[] args)
         {
+            args = new[] {"dsdss","ds"};
+
             if(args.Length == 0)
                 return MainProcess();
             else
@@ -57,6 +59,7 @@ namespace SimpleProcessExample
                 Console.WriteLine($"Arg: {arg}");
             }
             Thread.Sleep(2000);
+            Console.ReadKey();
             return 43534536;
         }
 
